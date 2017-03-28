@@ -1,4 +1,4 @@
-use orbclient::{self, EventIter, Renderer};
+use orbclient::{self, EventIter, Renderer, WindowFlag};
 use std;
 
 use interpolate::Interpolator;
@@ -14,7 +14,7 @@ pub struct RenderContext {
 
 impl RenderContext {
     pub fn new(width: u32, height: u32, title: &str) -> RenderContext {
-        let orb_window = orbclient::Window::new_flags(100, 100, width, height, title, true).unwrap();
+        let orb_window = orbclient::Window::new_flags(100, 100, width, height, title, &[WindowFlag::Async]).unwrap();
         RenderContext{window: orb_window}
     }
 
