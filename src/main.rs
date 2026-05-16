@@ -28,7 +28,7 @@ fn main() {
 
     let mut basepath = "";
     if cfg!(target_os = "redox") {
-        basepath = "/apps/pixelcannon/";
+        basepath = "/usr/games/pixelcannon/";
     }
 
     let mesh = Mesh::from_path(basepath.to_string() + "assets/sphere.obj").unwrap();
